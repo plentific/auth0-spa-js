@@ -456,7 +456,7 @@ export class Auth0Client {
 
     const { url, ...transaction } = await this._prepareAuthorizeUrl(
       urlOptions.authorizationParams || {},
-      options.appState,
+      appState,
     );
 
     this.transactionManager.create({
