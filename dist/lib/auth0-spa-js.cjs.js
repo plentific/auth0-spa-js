@@ -1642,7 +1642,7 @@ class Auth0Client {
         var _a;
         const _b = patchOpenUrlWithOnRedirect(options), {openUrl: openUrl, fragment: fragment, appState: appState} = _b, urlOptions = __rest(_b, [ "openUrl", "fragment", "appState" ]);
         const organizationId = ((_a = urlOptions.authorizationParams) === null || _a === void 0 ? void 0 : _a.organization) || this.options.authorizationParams.organization;
-        const _c = await this._prepareAuthorizeUrl(urlOptions.authorizationParams || {}, options.appState), {url: url} = _c, transaction = __rest(_c, [ "url" ]);
+        const _c = await this._prepareAuthorizeUrl(urlOptions.authorizationParams || {}, appState), {url: url} = _c, transaction = __rest(_c, [ "url" ]);
         this.transactionManager.create(Object.assign(Object.assign(Object.assign({}, transaction), {
             appState: appState
         }), organizationId && {
